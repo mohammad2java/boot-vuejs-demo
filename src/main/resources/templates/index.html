@@ -1,0 +1,49 @@
+<html lang="en">
+<div id="app">
+<head>
+	<meta charset="UTF-8">
+	<title>vue demo-{{message}}</title>
+	
+</head>
+<body>
+	
+	
+	
+	<form action="#">
+		Enter YourName<input v-model="myname" type="text"/>
+	Keyup-enter <input type="text" @keyup.enter="helloGet"/>
+	</form>
+	you entered name is: {{myname}}
+
+	<h1 v-on:click="helloGet">click using v-on:</h1>
+	<h2 @click="helloGet">click here</h2>
+	
+	<a v-bind:href="myurl">google</a>
+	<br>
+	<a :href="myurl">google-shorthand</a>
+	
+		{{message}}
+		
+	
+<h1>vue conditional example:</h1>
+	
+<h1 v-if="awesome">Vue is awesome!</h1>
+<h1 v-else>Oh no 😢</h1>
+	
+<h1 v-show="awesome">Vue is awesome! using v-show directive</h1>	
+	
+	
+	<h1>##loop example:</h1>
+	
+<ul id="example-1">
+  <li v-for="item in items">
+    {{ item }}
+  </li>
+</ul>
+	
+</body>
+</div>
+<script src="../static/js/vue.js"></script>
+	<script src="../static/js/app.js"></script>	
+	<script src="../static/js/jquery.min.js"></script>
+</html>
