@@ -55,7 +55,8 @@ following things how to do in VueJs
 	3-event handling
 	4-http-request/response (please use jquery ajax api)
 	5-dynamic attribute value
-
+    6-watchers
+    7-routers
 
 
 1-two way binding using v-model <br> 
@@ -150,4 +151,51 @@ in js section<br>
 		}
 	});		
 
+  6-watchers
+  ---------------
   
+      watcher is one type of agent who watch the property and called associated function when property value get changed.
+
+      example :
+      
+      var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello Vue!',
+        myname:'',
+        myurl:'https:/google.co.uk',
+        awesome:true,
+        items:['amir',"meer","fema","poo","suraj"]
+
+      },
+        methods:
+        {
+            helloGet: function(event) {
+                console.log(app.myname);
+                console.log(app.message);
+                app.message=app.message.concat(app.myname);
+
+            }
+        },
+        watch:{
+            message: function(newValue) {
+            console.log('watchers-value' + newValue);
+        }
+
+        }
+
+    });		
+
+    here  inside watch block we set watchers for message property and associate the fuction .
+    watch:{
+            message: function(newValue) {
+            console.log('watchers-value' + newValue);
+        }
+
+        }
+        function will call everytime when value of message property get changed.
+    
+    
+7-routers
+---------------
+    This is similer to angularjs view ..it use to make single page appication.

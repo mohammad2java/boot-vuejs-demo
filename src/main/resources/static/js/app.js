@@ -19,7 +19,14 @@ var app = new Vue({
 			app.message=app.message.concat(app.myname);
 			
 		}
+	},
+	watch:{
+		message: function(newValue) {
+		console.log('watchers-value' + newValue);
 	}
+		
+	}
+	
 });		
 	
 
